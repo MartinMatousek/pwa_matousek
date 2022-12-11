@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 
 app.use(bodyParser.json());
 
-mongoose.connect("mongodb://mongo:A68ocJ99eOG6ackEhPbj@containers-us-west-164.railway.app:7745/pwa", { useNewUrlParser: true });
+mongoose.connect("mongodb://mongo:A68ocJ99eOG6ackEhPbj@containers-us-west-164.railway.app:7745", { useNewUrlParser: true });
 var client = mongoose.connection;
 
 if (!client) console.log("Error connecting db");
