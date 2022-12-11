@@ -41,13 +41,13 @@ export default function Home() {
             redirect: 'follow'
         };
 
-        await fetch("http://localhost:3000/api/message/1", requestOptions);
+        await fetch("http://localhost:7163/api/message/1", requestOptions);
         client.send(chatName);
         await getAllMessagesForChat(chatName);
     }
 
     async function getAllMessagesForChat(chat) {
-        let responseMessages = await fetch("http://localhost:3000/api/messages/" + chat)
+        let responseMessages = await fetch("http://localhost:7163/api/messages/" + chat)
         let obj = await responseMessages.text();
 
         var objects = JSON.parse(obj);
@@ -80,7 +80,7 @@ export default function Home() {
             redirect: 'follow'
         };
 
-        await fetch("http://localhost:3000/api/chat/" + newChat, requestOptions);
+        await fetch("http://localhost:7163/api/chat/" + newChat, requestOptions);
 
         setChatName(newChat);
         setNewChat('');
@@ -88,7 +88,7 @@ export default function Home() {
     }
 
     async function getAllUsers() {
-        let response = await fetch("http://localhost:3000/api/users")
+        let response = await fetch("http://localhost:7163/api/users")
         let obj = await response.text();
 
         var objects = JSON.parse(obj);
@@ -100,7 +100,7 @@ export default function Home() {
     }
 
     async function getAllChatsForUser(userName) {
-        let response = await fetch("http://localhost:3000/api/chats/" + userName)
+        let response = await fetch("http://localhost:7163/api/chats/" + userName)
         let obj = await response.text();
 
         var objects = JSON.parse(obj);
@@ -139,7 +139,7 @@ export default function Home() {
     }
 
     client.onmessage = async function (e) {
-        let responseMessages = await fetch("http://localhost:3000/api/messages/" + e.data)
+        let responseMessages = await fetch("http://localhost:7163/api/messages/" + e.data)
         let obj = await responseMessages.text();
 
         var objects = JSON.parse(obj);

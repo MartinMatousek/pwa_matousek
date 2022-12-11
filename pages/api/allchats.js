@@ -11,7 +11,7 @@ app.use(
 );
 app.use(bodyParser.json());
 
-mongoose.connect("mongodb://127.0.0.1:27017/pwa", { useNewUrlParser: true });
+mongoose.connect("mongodb://mongo:A68ocJ99eOG6ackEhPbj@containers-us-west-164.railway.app:7745/pwa", { useNewUrlParser: true });
 var client = mongoose.connection;
 
 if (!client) console.log("Error connecting db");
