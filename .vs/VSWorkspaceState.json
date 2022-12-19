@@ -3,8 +3,13 @@
     "",
     "\\pages",
     "\\pages\\api",
+    "\\pages\\api\\chat",
+    "\\pages\\api\\chats",
+    "\\pages\\api\\message",
+    "\\pages\\api\\messages",
+    "\\pages\\api\\user",
     "\\styles"
   ],
-  "SelectedNode": "\\package.json",
+  "SelectedNode": "\\docker-compose.yml",
   "PreviewInSolutionExplorer": false
 }

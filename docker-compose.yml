@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  
+  mongo:
+    image: mmatousek/dockerhub:pwa-mongo
+    container_name: pwa-db
+    environment:
+      - MONGO_INITDB_DATABASE=pwa
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./database-data:/data/db
+  pwa-server:
+    image: mmatousek/dockerhub:pwa-server
+    container_name: pwa-server
+    ports:
+      - "5000:5000"
+  pwa-api:
+    image: mmatousek/dockerhub:pwa-api
+    container_name: pwa-api
+    ports:
+      - "3000:3000"
