@@ -10,7 +10,7 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      - ./database-data:/data/db
+      - ./database-data
   pwa-server:
     image: mmatousek/dockerhub:pwa-server
     container_name: pwa-server
