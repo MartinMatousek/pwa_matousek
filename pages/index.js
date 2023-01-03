@@ -85,6 +85,7 @@ export default function Home() {
         setChatName(newChat);
         setNewChat('');
         getAllChatsForUser(username);
+        client.send("chats_update");
     }
 
     async function getAllUsers() {
@@ -139,18 +140,21 @@ export default function Home() {
     }
 
     client.onmessage = async function (e) {
-        let responseMessages = await fetch("http://localhost:3000/api/messages/" + e.data)
-        let obj = await responseMessages.text();
+        if (e.data == "chats_update") {
+            getAllChatsForUser(username);
+        } else {
+            let responseMessages = await fetch("http://localhost:3000/api/messages/" + e.data)
+            let obj = await responseMessages.text();
 
-        var objects = JSON.parse(obj);
-        var res = [];
-        for (let i = 0; i < objects.length; i++) {
-            res.push(objects[i]);
+            var objects = JSON.parse(obj);
+            var res = [];
+            for (let i = 0; i < objects.length; i++) {
+                res.push(objects[i]);
+            }
+            setMessages(res);
+            setMessage('');
+            delay(1).then(() => document.getElementById("scrollarea").scrollTo(0, document.getElementById("scrollarea").scrollHeight));
         }
-        setMessages(res);
-        setMessage('');
-        delay(1).then(() => document.getElementById("scrollarea").scrollTo(0, document.getElementById("scrollarea").scrollHeight));
-
     };
 
     return (

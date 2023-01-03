@@ -1,6 +1,7 @@
 {
   "ExpandedNodes": [
     "",
+    "\\database-data",
     "\\pages",
     "\\pages\\api",
     "\\pages\\api\\chat",
@@ -10,6 +11,6 @@
     "\\pages\\api\\user",
     "\\styles"
   ],
-  "SelectedNode": "\\styles\\Home.module.css",
+  "SelectedNode": "\\PWA.postman_collection.json",
   "PreviewInSolutionExplorer": false
 }
