@@ -1,9 +1,9 @@
-##START APLIKACE
+START APLIKACE
 
 docker-compose up
 
 import postman kolekce
-spuštìní postman kolekce - "Run collection"
+spuÅ¡tÄ›nÃ­ postman kolekce - "Run collection"
 
-Aplikace bìží na:
+Aplikace bÄ›Å¾Ã­ na:
 http://localhost:3000/
