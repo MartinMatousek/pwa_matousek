@@ -1,11 +1,41 @@
 {
 	"info": {
-		"_postman_id": "4b5ca36a-5258-454a-809e-c8d326521217",
+		"_postman_id": "856f2e8c-c364-4226-bdc7-1953b3d039d0",
 		"name": "PWA",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "20042546"
+		"_exporter_id": "21197152"
 	},
 	"item": [
+		{
+			"name": "Delete all",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/all/",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"all",
+						""
+					]
+				}
+			},
+			"response": []
+		},
 		{
 			"name": "Add user",
 			"event": [
@@ -79,50 +109,6 @@
 		},
 		{
 			"name": "Add chat",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"let responseData = pm.response.json();\r",
-							"pm.collectionVariables.set(\"chatName\", responseData);\r",
-							"\r",
-							"pm.test(\"Returns chat name\", function () {\r",
-							"    pm.expect(pm.response.text()).to.include(\"Chat_1\");\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"users\": [\"{{userName}}\"]\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{host}}/api/chat/Chat_1",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"api",
-						"chat",
-						"Chat_1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Add chat Copy",
 			"event": [
 				{
 					"listen": "test",
@@ -893,13 +879,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Returns 400\", function () {\r",
-							"    pm.response.to.have.status(400);\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Chat already exists - error message\", function () {\r",
-							"    pm.response.to.have.body(\"Chat already exists.\");\r",
-							"});"
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -938,13 +918,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Returns 400\", function () {\r",
-							"    pm.response.to.have.status(400);\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Chat already exists - error message\", function () {\r",
-							"    pm.response.to.have.body(\"Chat already exists.\");\r",
-							"});"
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -983,13 +957,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Returns 400\", function () {\r",
-							"    pm.response.to.have.status(400);\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Chat already exists - error message\", function () {\r",
-							"    pm.response.to.have.body(\"Chat already exists.\");\r",
-							"});"
+							""
 						],
 						"type": "text/javascript"
 					}
